@@ -32,9 +32,9 @@ public class Conta {
 
     public String exibirDados() {
         return "\nNúmero da conta: " + this.pegarNumConta() +
-               "\nTitular: " + this.Banco.Pessoa.pegarNome() +
-               "\nCPF: " + this.Banco.Pessoa.pegarCpf() +
-               "\nEmail: " + this.Banco.Pessoa.pegarEmail() +
+               "\nTitular: " + this.titular.pegarNome() +
+               "\nCPF: " + this.titular.pegarCpf() +
+               "\nEmail: " + this.titular.pegarEmail() +
                "\nSaldo: " + utilitarios.Utils.doubleParaString(this.pegarSaldo()) +
                "\n";
     }
@@ -97,6 +97,7 @@ class ContaCorrente extends Conta {
     }
 }
 
+}
 
 // Classe ContaPoupanca HERDA de Conta
 class ContaPoupanca extends Conta {
@@ -122,5 +123,3 @@ class ContaPoupanca extends Conta {
     }
 
     }
-
-}
