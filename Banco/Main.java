@@ -22,7 +22,7 @@ public class Main {
         System.out.println("Escolha uma opção: ");
         int operacao = input.nextInt();
 
-    While (boolean true){
+    while (true); {
         switch (operacao) {
             case 1:
                 criarConta();
@@ -52,7 +52,7 @@ public class Main {
                 break;
         }
         } if (operacao == 0){
-            break
+            break;
         }
     }
 
@@ -158,13 +158,13 @@ public class Main {
         operacoes();
     }
 
-    public static void consultarSaldo() {
+    public void consultarSaldo() {
         System.out.println("Número da Conta: ");
         int numeroConta = input.nextInt();
 
-        Conta conta = encontrarConta(numeroConta);
+        Conta contacons = encontrarConta(numeroConta);
 
-        if (conta != null){
+        if (contacons != null){
             System.out.println(this.conta.pegarSaldo);
         } else {
             System.out.println("Conta não encontrada.");
