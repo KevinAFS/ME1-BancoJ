@@ -1,16 +1,17 @@
 package Banco;
 
-public class Conta {
-
+public abstract class Conta {
+    /*Atributos*/
     protected static int contadorDeContas = 1;
     protected int numeroConta; protected Pessoa titular; protected double saldo = 0.0;
-
+    /*Construtor*/
     public Conta(Pessoa titular, double saldoInicial) {
         this.numeroConta = contadorDeContas;
         this.titular = titular;
         this.saldo = saldoInicial;
         contadorDeContas += 1;
     }
+    /*Metodos Pegar e Confirmar*/
     public int pegarNumConta() {
         return numeroConta;
     }
@@ -30,6 +31,9 @@ public class Conta {
         this.saldo = saldo;
     }
 
+    /*Metodos da classe*/
+
+    /*Exibir Dados*/
     public String exibirDados() {
         return "\nNúmero da conta: " + this.pegarNumConta() +
                "\nTitular: " + this.titular.pegarNome() +
@@ -39,15 +43,17 @@ public class Conta {
                "\n";
     }
     
+    /*Depositar*/
     public void depositar(double valor) {
         if (valor > 0){
             confirmarSaldo(pegarSaldo() + valor);
-            System.out.println("O deposito no valor de " + valor + "foi realizado com sucesso.");
+            System.out.println("O deposito no valor de " + valor + " foi realizado com sucesso.");
         } else {
             System.out.println("O valor do deposito deve ser maior que 0, tente novamente.");
         }
     }
 
+    /*Sacar*/
     public void sacar(double valor) {
         if (valor > 0){
             if (valor <= this.pegarSaldo()) {
@@ -61,6 +67,7 @@ public class Conta {
         }
     }
 
+    /*Transferir*/
     public void transferir(Conta contaParaDeposito, double valor){
         if (valor > 0){
                 if (valor <= this.pegarSaldo()){
@@ -74,13 +81,13 @@ public class Conta {
     }
 
 
-
+    /*Calcular rendimento*/
     public void calcularRendimento() {
         System.out.println("Conta comum não possui rendimento específico.");
     }
 
 
-
+/* 
 class ContaCorrente extends Conta {
 
     private double taxaManutencao = 20.0;
@@ -93,33 +100,28 @@ class ContaCorrente extends Conta {
     @Override
     public void calcularRendimento() {
         saldo -= taxaManutencao;
-        System.out.println("Taxa de manutenção descontada: R$ " + taxaManutencao);
+        System.out.println("Taxa de manutenção descontada: " + taxaManutencao);
     }
 }
 
 }
 
-// Classe ContaPoupanca HERDA de Conta
 class ContaPoupanca extends Conta {
 
-    // Percentual de rendimento
-    private double taxaRendimento = 0.05; // 5%
+    private double taxaRendimento = 0.05;
 
-    // Construtor
     public ContaPoupanca(Pessoa titular, double saldoInicial) {
         super(titular, saldoInicial);
     }
 
-    // Sobrescrita do método
     @Override
     public void calcularRendimento() {
-        // Calcula o valor do rendimento
         double rendimento = saldo * taxaRendimento;
 
-        // Adiciona rendimento ao saldo
         saldo += rendimento;
 
-        System.out.println("Rendimento aplicado: R$ " + rendimento);
+        System.out.println("Rendimento aplicado: " + rendimento);
     }
 
+    */
     }
