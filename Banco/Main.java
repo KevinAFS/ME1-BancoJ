@@ -227,7 +227,7 @@ public class Main {
 
         if (contasCadastradas.size() > 0){
             for (Conta conta: contasCadastradas){
-                System.out.println(conta);
+                System.out.println(conta.exibirDados());
             }
         } else {
             System.out.println("Não existem contas cadastradas.");

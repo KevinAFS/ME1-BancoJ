@@ -14,6 +14,7 @@ public class ContaCorrente extends Conta implements Tributavel{
         super(titular, saldoInicial);
     }
    
+    /*
     public Pessoa pegarTitular() {
         return titular;
     }
@@ -27,10 +28,14 @@ public class ContaCorrente extends Conta implements Tributavel{
         this.saldo = saldo;
     }
 
+    */
+
     @Override
     public double calcularTributo(){
         return pegarSaldo() * 0.275;
     }
+    
+
     /*
     public void calcularTributo(double valor){
         if (valor > 6000){

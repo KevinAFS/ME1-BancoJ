@@ -15,6 +15,8 @@ public class ContaPoupanca extends Conta {
     super(titular, saldoInicial);
     }
 
+    /*
+
     public Pessoa pegarTitular() {
         return titular;
     }
@@ -27,7 +29,7 @@ public class ContaPoupanca extends Conta {
     public void confirmarSaldo(double saldo) {
         this.saldo = saldo;
     }
-
+    */
     
 }
 

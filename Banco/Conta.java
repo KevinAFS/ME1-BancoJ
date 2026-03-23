@@ -72,8 +72,9 @@ public abstract class Conta {
         if (valor > 0){
                 if (valor <= this.pegarSaldo()){
                     confirmarSaldo(pegarSaldo() - valor);
-                    contaParaDeposito.saldo = contaParaDeposito.pegarSaldo() + valor;
-                    System.out.println("A transferência no valor de " + valor + "foi realizada com sucesso.");
+                    /*contaParaDeposito.saldo = contaParaDeposito.pegarSaldo() + valor;*/
+                    contaParaDeposito.depositar(valor);
+                    System.out.println("A transferência no valor de " + valor + " foi realizada com sucesso.");
                 }
         } else {
             System.out.println("O valor da transferência deve ser maior que 0, tente novamente.");
